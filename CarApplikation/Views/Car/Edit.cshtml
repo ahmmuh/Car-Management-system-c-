@@ -1,0 +1,37 @@
+﻿@model Car
+
+
+<div class="container">
+    <div class="row">
+        <h4>Edit cars</h4>
+        <div class="col">
+            <form method="post">
+               <div class="mb-3">
+                    <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+               </div>
+
+               <div class="mb-3">
+                <label asp-for="ModelNumber"></label>
+                <input asp-for="ModelNumber" class="form-control" />
+                <span asp-validation-for="ModelNumber" class="text-danger"></span>
+               </div>
+                 <div class="mb-3">
+                        
+                  <label asp-for="ModelYear"></label>
+                <input asp-for="ModelYear" class="form-control"/>
+                <span asp-validation-for="ModelYear" class="text-danger"></span>
+                 </div>
+                <input  type="submit" class="btn btn-success mt-3" value="Update"/>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+@{
+        <partial name="_ValidationScriptsPartial"/>
+}
+}

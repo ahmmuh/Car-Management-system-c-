@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Car>
+
+
+    <table class="table table-bordered table-striped" width="100%">
+
+        <thead>
+            <th>Id</th>
+            <th>Car Name</th>
+            <th>Model Number</th>
+            <th>Model Year</th>
+            <th>Update || Delere</th>
+           
+
+        </thead>
+
+
+        <tbody>
+         @foreach (var car in Model)
+           {
+                <tr>
+              <td>@car.Id</td>
+              <td>@car.Name</td>
+              <td>@car.ModelNumber</td>
+              <td>@car.ModelYear</td>
+              <td>
+                  <div class="w-75 btn-group d-flex justify-content-between" role="group">
+                      <a asp-controller="Car" asp-action="Edit" asp-route-id="@car.Id">
+                          <i class="bi bi-pen"></i>Edit
+                      </a>
+
+                        <a asp-controller="Car" asp-action="Delete" asp-route-id="@car.Id">
+                          <i class="bi bi-pen"></i>Delete
+                      </a>
+                  </div>
+              </td>
+           
+            </tr>
+           }
+        </tbody>
+    </table>
